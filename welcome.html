@@ -1,10 +1,7 @@
 <uiView>    
-  <div id="suuntoplus">
-    <div class="sp-title-bg" style="width:100%;height:15%;"></div>
+  <div id="suuntoplus">    
+   <div class="sp-title-bg" style="width:100%;height:15%;"></div>
     <div class="sp-title-text sp-t-m p-hc" style="top:3%;">Bad 3x15</div>
-    
-
-  
 
     <div class="cm-bg sp-vertical-center p-hc" style="top:20%">
       <span class="sp-t-m">Press button to add point.</span>            
@@ -32,7 +29,7 @@
     </div>        
 </div>
     
-<div style="left:0%; top:57%; width:100%; height:12%;">    
+<div style="left:0%; top:55%; width:100%; height:12%;">    
     <div class="cm-bg" style="left:20%">
       <span class="sp-t-m">Home</span>            
     </div>
@@ -41,22 +38,14 @@
     </div>
 </div>
 
-    <!-- Bottom button hint image -->
-    <:if test="{{ IS_NG3 }}">
-      <!-- New watches -->
-      <div class="btn btn-btm">
-        <img class="cm-bgc icon" src="hint-btn-bottom.png" />
-      </div>
-    </:if>
-    <:else>
-      <!-- Old watches -->
-      <img class="btn-btmMask" src="a-sel-d.png" />
-    </:else>
-<div style="left:5%; top:76%; width:90%; height:25%; background-color:#FFB000; text-align:center;">
-    <span class="sp-t-m sp-vertical-center" style="color:white;">
-        START GAME
-    </span>
-</div>
+
+  <div style="width: 100%; height: 50%; top: calc(100% - 50%e); left: 0%;">
+      <img src="btn-shape-btm.png" class="c-yellow" />
+      <div class="f-t-l cm-fgc" style="top: 0%; left: calc(50% - 50%e);">Begin </div>
+    </div>
+    <div style="width: 50px; height: 50px; top: calc(72.5% - 50%e); left: calc(90% - 50%e);">
+      <img class="c-red" src="hint-btn-bottom.png" />
+    </div>
     <!-- Button handlers trigger onEvent callback in main.js -->
     <userInput>      
       <pushButton name="down" onClick="$.put('/Zapp/{zapp_index}/Event', 0, null, 'int32');"/>

@@ -61,11 +61,10 @@
     <div class="sp-d-xs f-num p-hc" style="top:calc(85% - 50%e);">
       <eval input="/Activity/Move/-1/Duration/Current" outputFormat="Duration_Training" default="--" />
     </div>
-
-    <:if test="{{ IS_UI2 }}">
-      <div style="top:17%;left:0%;width:100%;height:55%;"
-           onTap="$.put('/Zapp/{zapp_index}/Event', 5, null, 'int32');">-</div>
-    </:if>
-
+ 
+    <!-- Zone gauge -->
+    <import src="#zone-g" />
+ 
+    
   </div>
 </uiView>

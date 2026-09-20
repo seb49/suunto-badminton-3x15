@@ -1,5 +1,5 @@
 var currentTemplate = 'welcome';
-var lastWinner = "";
+
 
 function onLoad(_input, output) {
   output.maxScore = 15;
@@ -25,6 +25,8 @@ function onLoad(_input, output) {
   output.matchFinished = 0;
 
   output.debugEvent = 0;
+
+  output.lastWinner = -1
 }
 
 function onEvent(_input, output, eventId) {
@@ -41,16 +43,20 @@ var setWon = false;
 
     // +1 HOME
     case 1:
+      output.debugEvent="change last winner";
+     
+        
       if (output.matchFinished == 0) {
-        lastWinner = "HOME";
         output.homeScore++;
+         output.lastWinner = 1;
       }
       break;
 
     // +1 AWAY
     case 2:
+      output.lastWinner = 0;
+        
       if (output.matchFinished == 0) {
-        lastWinner = "AWAY";
         output.awayScore++;
       }
       break;
@@ -89,7 +95,7 @@ var setWon = false;
         output.debugEvent="ICI";
         setWon = false;      
         
-        if (lastWinner == "HOME"){
+        if (output.lastWinner == 1){
           output.homeScore--;
           output.setsHome--;
         }
@@ -100,18 +106,18 @@ var setWon = false;
 
       if (output.currentSet == 1) {
 
-        output.set1Home = "";
-        output.set1Away = "";
+        output.set1Home = null;
+        output.set1Away = null;
       }
       else if (output.currentSet == 2) {
 
-        output.set2Home = "";
-        output.set2Away = "";
+        output.set2Home = null;
+        output.set2Away = null;
       }
       else if (output.currentSet == 3) {
 
-        output.set3Home = "";
-        output.set3Away = "";
+        output.set3Home = null;
+        output.set3Away = null;
       }
       
       output.currentSet--; 
@@ -139,12 +145,14 @@ var setWon = false;
         output.awayScore <= 13) {
 
       setWon = true;
+      output.lastWinner = 1;
     }
 
     else if (output.awayScore >= 15 &&
              output.homeScore <= 13) {
 
       setWon = true;
+      output.lastWinner = 0;
     }
 
 
