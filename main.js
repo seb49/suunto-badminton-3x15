@@ -1,0 +1,277 @@
+var currentTemplate = 'welcome';
+var lastWinner = "";
+
+function onLoad(_input, output) {
+  output.maxScore = 15;
+  output.currentSet = 0;
+
+  output.homeScore = 13;
+  output.awayScore = 13;
+
+  output.indHome = 1;
+  output.indAway = 0;
+
+  
+  // output.set1Home = 0;
+  // output.set1Away = 0;
+  // output.set2Home = 0;
+  // output.set2Away = 0;
+  // output.set3Home = 0;
+  // output.set3Away = 0;
+
+  output.setsHome = 0;
+  output.setsAway = 0;
+
+  output.matchFinished = 0;
+
+  output.debugEvent = 0;
+}
+
+function onEvent(_input, output, eventId) {
+var setWon = false;
+  // ==================================================
+  // 1. Modification du score
+  // ==================================================
+
+  switch (eventId) {
+    case 0:
+      //on est sur l'écran d'accueil, on passe au démarrage du jeu
+      changeView('t');
+      break;
+
+    // +1 HOME
+    case 1:
+      if (output.matchFinished == 0) {
+        lastWinner = "HOME";
+        output.homeScore++;
+      }
+      break;
+
+    // +1 AWAY
+    case 2:
+      if (output.matchFinished == 0) {
+        lastWinner = "AWAY";
+        output.awayScore++;
+      }
+      break;
+
+    // -1 HOME
+    case 3:   
+      if (output.matchFinished == 0 &&
+          output.homeScore > 0) {
+        output.homeScore--;
+      }
+      break;
+
+    // -1 AWAY
+    case 4:
+      if (output.matchFinished == 0 &&
+          output.awayScore > 0) {
+        output.awayScore--;
+      }    
+      break;
+      case 5:
+      output.matchFinished=0; 
+       output.debugEvent="retour ecran";
+          changeView('t');
+      break;      
+      case 9: //end sed
+      output.matchFinished=0;           
+          // Nouveau set
+          output.homeScore = 13;
+          output.awayScore = 13;
+          changeView('t');
+      break;
+      case 10: //cancel last set
+      output.matchFinished = 0; 
+      
+        //on réinit les variables 
+        output.debugEvent="ICI";
+        setWon = false;      
+        
+        if (lastWinner == "HOME"){
+          output.homeScore--;
+          output.setsHome--;
+        }
+        else{
+          output.awayScore--;
+          output.setsAway--;
+        }
+
+      if (output.currentSet == 1) {
+
+        output.set1Home = "";
+        output.set1Away = "";
+      }
+      else if (output.currentSet == 2) {
+
+        output.set2Home = "";
+        output.set2Away = "";
+      }
+      else if (output.currentSet == 3) {
+
+        output.set3Home = "";
+        output.set3Away = "";
+      }
+      
+      output.currentSet--; 
+      
+      changeView('t');
+      break;
+  }
+
+
+  // ==================================================
+  // 2. Vérification de la fin du set
+  // ==================================================
+
+  if (output.matchFinished == 0) {
+
+    
+
+
+    // ------------------------------------------------
+    // Avant 14-14 :
+    // premier à 15
+    // ------------------------------------------------
+
+    if (output.homeScore >= 15 &&
+        output.awayScore <= 13) {
+
+      setWon = true;
+    }
+
+    else if (output.awayScore >= 15 &&
+             output.homeScore <= 13) {
+
+      setWon = true;
+    }
+
+
+    // ------------------------------------------------
+    // À partir de 14-14 :
+    // 2 points d'écart
+    // ou 21 atteint
+    // ------------------------------------------------
+
+    else if (output.homeScore >= 14 &&
+             output.awayScore >= 14) {
+
+      var difference =
+        output.homeScore - output.awayScore;
+
+      output.debugEvent = difference;
+
+
+      // 20-20 : le prochain point gagne
+      if (output.homeScore >= 20 &&
+          output.awayScore >= 20) {
+
+        if (output.homeScore == 21 ||
+            output.awayScore == 21) {
+
+          setWon = true;
+        }
+      }
+
+      // Sinon : 2 points d'écart
+      else if (difference >= 2 ||
+               difference <= -2) {
+
+        setWon = true;
+      }
+    }
+
+
+    // ==================================================
+    // 3. Fin du set
+    // ==================================================
+
+    if (setWon) {
+
+      output.currentSet++;
+
+
+      // ----------------------------------------------
+      // Enregistrement du score
+      // ----------------------------------------------
+
+      if (output.currentSet == 1) {
+
+        output.set1Home = output.homeScore;
+        output.set1Away = output.awayScore;
+
+      }
+      else if (output.currentSet == 2) {
+
+        output.set2Home = output.homeScore;
+        output.set2Away = output.awayScore;
+      }
+      else if (output.currentSet == 3) {
+
+        output.set3Home = output.homeScore;
+        output.set3Away = output.awayScore;
+      }
+
+
+      // ----------------------------------------------
+      // Déterminer le vainqueur du set
+      // ----------------------------------------------
+
+      if (output.homeScore > output.awayScore) {
+        output.setsHome++;
+      }
+      else {
+        output.setsAway++;
+      }
+
+
+      // ----------------------------------------------
+      // Match terminé ?
+      // ----------------------------------------------
+
+      if (output.setsHome == 2 || output.setsAway == 2) {
+
+        output.matchFinished = 1;
+        changeView('endmatch');
+
+      }
+      else {
+        output.debugEvent="change text"        
+        changeView('endSet');        
+        setText("#winnerLastSet", "World");
+      }
+    }
+  }
+}
+
+var changeView = function(template) {
+  currentTemplate = template;
+  unload('_cm'); // Unload & reload the screen to run getUserInterface
+};
+
+function evaluate(_input, output) {
+//  setText('#lbl-active', output.activeTeam == 0 ? 'HOME' : 'AWAY');
+}
+
+// function getUserInterface() {  
+//   return { template: 't' ,
+//      bottom: { input: '/Activity/Activity/-1/Duration/Current', format: 'Duration_Training' }
+//   };
+// }
+
+function getUserInterface() {  
+
+  return { template: currentTemplate ,
+     bottom: { input: '/Activity/Activity/-1/Duration/Current', format: 'Duration_Training' }
+  };
+
+}
+
+function getSummaryOutputs(_input, output) {
+  return [
+    { id: 'h', name: 'Home Score', format: 'Count_Twodigits', value: output.homeScore },
+    { id: 'a', name: 'Away Score', format: 'Count_Twodigits', value: output.awayScore },
+    { id: 't', name: 'Test', value: output.debugEvent }
+  ];
+}

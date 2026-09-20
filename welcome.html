@@ -1,0 +1,65 @@
+<uiView>    
+  <div id="suuntoplus">
+    <div class="sp-title-bg" style="width:100%;height:15%;"></div>
+    <div class="sp-title-text sp-t-m p-hc" style="top:3%;">Bad 3x15</div>
+    
+
+  
+
+    <div class="cm-bg sp-vertical-center p-hc" style="top:20%">
+      <span class="sp-t-m">Press button to add point.</span>            
+    </div>
+
+    <div class="cm-bg sp-vertical-center p-hc" style="top:30%">
+      <span class="sp-t-m">Long press to remove.</span>      
+    </div>
+
+    <!--Barre verticale de séparation-->
+    <div style="
+    left:50%;
+    top:45%;
+    width:2px;
+    height:25%;
+    background-color:white;
+"></div>
+
+<div style="left:0%; top:45%; width:100%; height:12%">
+    <div class="cm-mid" style="left:17%">
+      <span class="sp-t-m">Top btn</span>            
+    </div>
+    <div class="cm-mid" style="left:56%">
+      <span class="sp-t-m">Bottom btn</span>            
+    </div>        
+</div>
+    
+<div style="left:0%; top:57%; width:100%; height:12%;">    
+    <div class="cm-bg" style="left:20%">
+      <span class="sp-t-m">Home</span>            
+    </div>
+    <div class="cm-bg" style="left:63%;">
+      <span class="sp-t-m">Away</span>            
+    </div>
+</div>
+
+    <!-- Bottom button hint image -->
+    <:if test="{{ IS_NG3 }}">
+      <!-- New watches -->
+      <div class="btn btn-btm">
+        <img class="cm-bgc icon" src="hint-btn-bottom.png" />
+      </div>
+    </:if>
+    <:else>
+      <!-- Old watches -->
+      <img class="btn-btmMask" src="a-sel-d.png" />
+    </:else>
+<div style="left:5%; top:76%; width:90%; height:25%; background-color:#FFB000; text-align:center;">
+    <span class="sp-t-m sp-vertical-center" style="color:white;">
+        START GAME
+    </span>
+</div>
+    <!-- Button handlers trigger onEvent callback in main.js -->
+    <userInput>      
+      <pushButton name="down" onClick="$.put('/Zapp/{zapp_index}/Event', 0, null, 'int32');"/>
+    </userInput>
+  </div>
+</uiView>

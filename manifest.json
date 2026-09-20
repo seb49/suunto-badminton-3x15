@@ -1,0 +1,30 @@
+{
+  "name": "Badminton 3x15 Score",
+  "version": "1.0",
+  "author": "Sebastien Delestre",
+  "description": "Track home & away score.",
+  "type": "feature",
+  "usage": "workout",
+  "modificationTime": 1748822400,
+  "template": [{ "name": "welcome.html" },{ "name": "t.html" },{ "name": "endset.html" },{ "name": "endmatch.html" }],
+  "out": [
+    { "name": "maxScore", "format": "Count_Twodigits", "log": true, "shownName": "Max Score" },
+    { "name": "currentSet", "format": "Count_Twodigits", "log": true, "shownName": "Current Set" },
+    { "name": "homeScore", "format": "Count_Twodigits", "log": true, "shownName": "Home Score" },
+    { "name": "awayScore", "format": "Count_Twodigits", "log": true, "shownName": "Away Score" },
+    { "name": "activeTeam" },
+    { "name": "indHome" },
+    { "name": "indAway" },
+    { "name": "set1Home", "format": "Count_Twodigits", "log": true, "shownName": "Set 1 Home" },
+    { "name": "set1Away", "format": "Count_Twodigits", "log": true, "shownName": "Set 1 Away" },
+    { "name": "set2Home", "format": "Count_Twodigits", "log": true, "shownName": "Set 2 Home" },
+    { "name": "set2Away", "format": "Count_Twodigits", "log": true, "shownName": "Set 2 Away" },
+    { "name": "set3Home", "format": "Count_Twodigits", "log": true, "shownName": "Set 2 Home" },
+    { "name": "set3Away", "format": "Count_Twodigits", "log": true, "shownName": "Set 2 Away" },
+    {  "name": "debugEvent",  "log": true},
+    {  "name": "debugSet",  "log": true},
+    {  "name": "setsHome", "format": "Count_Twodigits", "log": true, "shownName": "Sets Home" },
+    {  "name": "setsAway", "format": "Count_Twodigits", "log": true, "shownName": "Sets Away" },
+    {  "name": "matchFinished", "format": "Count_Twodigits", "log": true, "shownName": "Finito" }
+  ]
+}
