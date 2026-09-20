@@ -89,7 +89,7 @@ var setWon = false;
           changeView('t');
       break;
       case 10: //cancel last set
-      output.matchFinished = 0; 
+        output.matchFinished = 0; 
       
         //on réinit les variables 
         output.debugEvent="ICI";
@@ -245,7 +245,7 @@ var setWon = false;
 
       }
       else {
-        output.debugEvent="change text"        
+                
         changeView('endSet');        
         setText("#winnerLastSet", "World");
       }
