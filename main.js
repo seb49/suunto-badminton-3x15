@@ -9,19 +9,19 @@ function onLoad(_input, output) {
 
 
   
-  // output.set1Home = 0;
-  // output.set1Away = 0;
-  // output.set2Home = 0;
-  // output.set2Away = 0;
-  // output.set3Home = 0;
-  // output.set3Away = 0;
+   output.set1Home = null;
+   output.set1Away = null;
+   output.set2Home = null;
+   output.set2Away = null;
+   output.set3Home = null;
+   output.set3Away = null;
 
   output.setsHome = 0;
   output.setsAway = 0;
 
   output.matchFinished = 0;
 
-  output.debugEvent = 0;
+
 
   output.lastWinner = -1
 }
@@ -40,9 +40,7 @@ var setWon = false;
 
     // +1 HOME
     case 1:
-      output.debugEvent="change last winner";
      
-        
       if (output.matchFinished == 0) {
         output.homeScore++;
          output.lastWinner = 1;
@@ -75,7 +73,7 @@ var setWon = false;
       break;
       case 5:
       output.matchFinished=0; 
-       output.debugEvent="retour ecran";
+     
           changeView('t');
       break;      
       case 9: //end sed
@@ -84,6 +82,7 @@ var setWon = false;
           output.homeScore = 13;
           output.awayScore = 13;
           output.currentSet++;
+          setText("#some_id", "set+1")
 
           changeView('t');
       break;
@@ -91,7 +90,7 @@ var setWon = false;
         output.matchFinished = 0; 
       
         //on réinit les variables 
-        output.debugEvent="ICI";
+    
         setWon = false;      
         
         if (output.lastWinner == 1){
@@ -167,7 +166,7 @@ var setWon = false;
       var difference =
         output.homeScore - output.awayScore;
 
-      output.debugEvent = difference;
+    
 
 
       // 20-20 : le prochain point gagne

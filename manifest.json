@@ -16,7 +16,6 @@
     { "name": "set2Away", "format": "Count_Twodigits", "log": false, "shownName": "Set 2 Away" },
     { "name": "set3Home", "format": "Count_Twodigits", "log": false, "shownName": "Set 2 Home" },
     { "name": "set3Away", "format": "Count_Twodigits", "log": false, "shownName": "Set 2 Away" },
-    {  "name": "debugEvent",  "log": false},
     {  "name": "lastWinner",  "format": "Count_Twodigits", "log": false, "shownName": "DernierGagnant" },
     {  "name": "setsHome", "format": "Count_Twodigits", "log": true, "shownName": "Sets Home" },
     {  "name": "setsAway", "format": "Count_Twodigits", "log": true, "shownName": "Sets Away" },

@@ -1,19 +1,23 @@
-<uiView>    
-  <div id="suuntoplus">
+<uiView
+onActivate="$.subscribe('Zapp/{zapp_index}/Output/currentSet', function(v) {
+      setText('#some_id', 'Game ' + v);
+    });">
+    <div id="suuntoplus">
      <div style="width: 100%; height: 50%; top: 0%; left: 0%;">
       <img src="btn-shape-top.png" class="c-yellow" />
-      <div class="f-t-l cm-fgc" style="top: calc(35% - 50%e); left: calc(50% - 50%e);">Continue</div>
+      <div class="f-t-l cm-fgc" style="top: calc(30% - 50%e); left: calc(50% - 50%e);">Continue</div>
     </div>
-    <div style="width: 50px; height: 50px; top: calc(30% - 50%e); left: calc(90% - 50%e);">
+    <div style="width: 50px; height: 50px; top: calc(35% - 50%e); left: calc(90% - 50%e);">
       <img class="c-lime" src="hint-btn-top.png" />
     </div>
     
-   <div class="cm-bg sp-vertical-center p-hc" style="top:35%">
-       <span class="sp-t-l">SET </span>
-       <span class="sp-t-l">
-          <eval input="Zapp/{zapp_index}/Output/currentSet" outputFormat="Count_Threedigits" default="1"/>
-      </span>
-   </div>   <div class="cm-bg sp-vertical-center p-hc" style="top:50%">
+   <div  class="cm-bg sp-vertical-center p-hc" style="top:35%;left: calc(50% - 50%e);">
+       <span id="some_id" class="sp-t-l">SET 2</span>   
+   </div>   
+
+
+   
+   <div  class="cm-bg sp-vertical-center p-hc" style="top:50%;left: calc(50% - 50%e);">
    
       <span class="sp-t-l"><eval input="Zapp/{zapp_index}/Output/homeScore"
         outputFormat="Count_Threedigits" default="10"/></span>
@@ -24,7 +28,7 @@
 
   <div style="width: 100%; height: 50%; top: calc(100% - 50%e); left: 0%;">
       <img src="btn-shape-btm.png" class="c-grey" />
-      <div class="f-t-l cm-fgc" style="top: 0%; left: calc(50% - 50%e);">Cancel last win</div>
+      <div class="sp-t-m cm-fgc" style="top: calc(20% - 50%e); left: calc(50% - 50%e);">CANCEL LAST WIN</div>
     </div>
     <div style="width: 50px; height: 50px; top: calc(72.5% - 50%e); left: calc(90% - 50%e);">
       <img class="c-white" src="hint-btn-bottom.png" />

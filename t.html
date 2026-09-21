@@ -1,13 +1,14 @@
-<uiView>
+<uiView
+onActivate="$.subscribe('Zapp/{zapp_index}/Output/currentSet', function(v) {
+      setText('#some_id', 'Game ' + v);
+    });">
   <div>
 
-    <div class="sp-title-bg" style="width:100%;height:20%;"></div>
+     <div class="sp-title-bg" style="width:100%;height:20%;"></div>
     <div class="sp-title-text sp-t-m p-hc" style="top:6%;">
-      <span class="sp-t-m">Game </span>
-      <span class="sp-t-m"><eval input="Zapp/{zapp_index}/Output/currentSet" 
-           outputFormat="Count_Twodigits"  default="3"/></span>
-    </div>
-
+      <span id="some_id" class="sp-t-m">Game N</span>
+      </div> 
+  
   
 
     <div class="f-t-s cm-mid" style="top:23%;left:5%;width:46%;max-height:34px;text-align:center;">HOME</div>
@@ -68,10 +69,6 @@
     <div class="sp-d-xs f-num p-hc" style="top:calc(85% - 50%e);">
       <eval input="/Activity/Move/-1/Duration/Current" outputFormat="Duration_Training" default="--" />
     </div>
- 
-    <!-- Zone gauge -->
-    <import src="#zone-g" />
- 
     
   </div>
 </uiView>
