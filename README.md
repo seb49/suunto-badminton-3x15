@@ -1,5 +1,5 @@
 
-# 🏀 Badminton 3x15 Score — SuuntoPlus App
+# 🏸 Badminton 3x15 Score — SuuntoPlus App
 
 A SuuntoPlus sports app to track badminton 3x15 scores directly from your Suunto watch during a game. No more losing track of the score — focus on the game.
 
