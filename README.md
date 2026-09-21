@@ -13,15 +13,15 @@ A SuuntoPlus sports app to track badminton 3x15 scores directly from your Suunto
 
 ## ⌚ Compatibility
 
-| Watch | Display | Touch | Status |
+| Watch | Display | Status |
 |-------|---------|-------|--------|
-| Suunto Vertical 2 | q (466×466) | ❓ | Not tested|
-| Suunto Race S | q (466×466) | ❓ | Not tested |
-| Suunto Race | q (466×466) | ✅ | Recommended |
-| Suunto Race 2 | q (466×466) | ❓ | Not tested |
-| Suunto Ocean | q (466×466) | ❓ | Not tested |
-| Suunto Vertical (1st gen) | o (280×280) | ⚠️ Buttons only | Not tested |
-| Suunto 9 Peak Pro | n (240×240) | ⚠️ Buttons only | Not tested |
+| Suunto Vertical 2 | q (466×466) | Not tested|
+| Suunto Race S | q (466×466) | Not tested |
+| Suunto Race | q (466×466) | ✅ Recommended |
+| Suunto Race 2 | q (466×466) | Not tested |
+| Suunto Ocean | q (466×466) | Not tested |
+| Suunto Vertical (1st gen) | o (280×280) | Not tested |
+| Suunto 9 Peak Pro | n (240×240) | Not tested |
 
 ---
 
