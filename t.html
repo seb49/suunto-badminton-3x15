@@ -1,18 +1,17 @@
 <uiView>
   <div>
 
-    <div class="sp-title-bg" style="width:100%;height:15%;"></div>
-    <div class="sp-title-text sp-t-m p-hc" style="top:3%;">Bad 3x15</div>
+    <div class="sp-title-bg" style="width:100%;height:20%;"></div>
+    <div class="sp-title-text sp-t-m p-hc" style="top:6%;">
+      <span class="sp-t-m">Game </span>
+      <span class="sp-t-m"><eval input="Zapp/{zapp_index}/Output/currentSet" 
+           outputFormat="Count_Twodigits"  default="3"/></span>
+    </div>
 
-    <!--<div class="sp-t-s sp-c-orange p-hc" style="top:17%;">
-      <eval input="Zapp/{zapp_index}/Output/indHome"
-            outputFormat="keyValue 0=AWAY|1=HOME" default="HOME" />
-    </div>-->
+  
 
-    <div class="cm-mid" style="top:25%;left:calc(50% - 1px);width:2px;height:33%;">|</div>
-
-    <div class="f-s cm-mid" style="top:23%;left:2%;width:46%;max-height:34px;text-align:center;">HOME</div>
-    <div class="f-s cm-mid" style="top:23%;left:52%;width:46%;max-height:34px;text-align:center;">AWAY</div>
+    <div class="f-t-s cm-mid" style="top:23%;left:5%;width:46%;max-height:34px;text-align:center;">HOME</div>
+    <div class="f-t-s cm-mid" style="top:23%;left:52%;width:46%;max-height:34px;text-align:center;">AWAY</div>
 
     <div class="f-num sp-d-xxl" style="top:20%;left:2%;width:46%;text-align:center;">
       <eval input="Zapp/{zapp_index}/Output/homeScore"
@@ -23,24 +22,32 @@
             outputFormat="Count_Twodigits" default="10" />
     </div>
 
+     <!--Barre verticale de séparation-->
+    <div style="
+    left:50%;
+    top:65%;
+    width:2px;
+    height:12%;
+    background-color:white;
+"></div>
+
     <div class="f-ico-l" style="top:calc(54% - 100%e);left:calc(50% - 50%e)">&#xE034;</div>
     <!-- INDICATEURS descendus a 70% pour eviter superposition avec les scores -->
-    <div class="cm-mid" style="top:64%;left:calc(50% - 1px);width:4px;height:33%;">|</div>     
-    <div class="sp-c-orange sp-t-s" style="top:60%;left:5%;width:46%;text-align:center;">1st</div>
-    <div class="sp-c-orange sp-t-s" style="top:60%;left:16%;width:46%;text-align:center;">
+     
+    <div class="sp-c-orange sp-t-s" style="top:62%;left:5%;width:46%;text-align:center;">1st</div>
+    <div class="sp-c-orange sp-t-s" style="top:62%;left:18%;width:46%;text-align:center;">
       <eval input="Zapp/{zapp_index}/Output/set1Home" outputFormat="Count_Twodigits" default="-" />
     </div>
-    <div class="sp-c-orange sp-t-s" style="top:60%;left:40%;width:46%;text-align:center;">
+    <div class="sp-c-orange sp-t-s" style="top:62%;left:38%;width:46%;text-align:center;">
       <eval input="Zapp/{zapp_index}/Output/set1Away" outputFormat="Count_Twodigits" default="-" />
     </div>
 
     <!-- INDICATEURS descendus a 70% pour eviter superposition avec les scores -->
-    <div class="cm-mid" style="top:70%;left:calc(50% - 1px);width:4px;height:33%;">|</div>     
-    <div class="sp-c-orange sp-t-s" style="top:66%;left:5%;width:46%;text-align:center;">2nd</div>
-    <div class="sp-c-orange sp-t-s" style="top:66%;left:16%;width:46%;text-align:center;">
+    <div class="sp-c-orange sp-t-s" style="top:70%;left:5%;width:46%;text-align:center;">2nd</div>
+    <div class="sp-c-orange sp-t-s" style="top:70%;left:18%;width:46%;text-align:center;">
       <eval input="Zapp/{zapp_index}/Output/set2Home" outputFormat="Count_Twodigits" default="-" />
     </div>
-    <div class="sp-c-orange sp-t-s" style="top:66%;left:40%;width:46%;text-align:center;">
+    <div class="sp-c-orange sp-t-s" style="top:70%;left:38%;width:46%;text-align:center;">
       <eval input="Zapp/{zapp_index}/Output/set2Away" outputFormat="Count_Twodigits" default="-" />
     </div>
     

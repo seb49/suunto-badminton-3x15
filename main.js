@@ -2,14 +2,11 @@ var currentTemplate = 'welcome';
 
 
 function onLoad(_input, output) {
-  output.maxScore = 15;
-  output.currentSet = 0;
+  output.currentSet = 1;
 
   output.homeScore = 13;
   output.awayScore = 13;
 
-  output.indHome = 1;
-  output.indAway = 0;
 
   
   // output.set1Home = 0;
@@ -86,6 +83,8 @@ var setWon = false;
           // Nouveau set
           output.homeScore = 13;
           output.awayScore = 13;
+          output.currentSet++;
+
           changeView('t');
       break;
       case 10: //cancel last set
@@ -120,7 +119,7 @@ var setWon = false;
         output.set3Away = null;
       }
       
-      output.currentSet--; 
+      //output.currentSet--; 
       
       changeView('t');
       break;
@@ -197,8 +196,7 @@ var setWon = false;
 
     if (setWon) {
 
-      output.currentSet++;
-
+      //output.currentSet++;     
 
       // ----------------------------------------------
       // Enregistrement du score
@@ -220,7 +218,8 @@ var setWon = false;
         output.set3Home = output.homeScore;
         output.set3Away = output.awayScore;
       }
-
+      
+      
 
       // ----------------------------------------------
       // Déterminer le vainqueur du set
@@ -246,9 +245,11 @@ var setWon = false;
       }
       else {
                 
-        changeView('endSet');        
-        setText("#winnerLastSet", "World");
+        changeView('endset');        
+       // setText("#winnerLastSet", "World");
       }
+ 
+
     }
   }
 }
@@ -278,8 +279,8 @@ function getUserInterface() {
 
 function getSummaryOutputs(_input, output) {
   return [
-    { id: 'h', name: 'Home Score', format: 'Count_Twodigits', value: output.homeScore },
-    { id: 'a', name: 'Away Score', format: 'Count_Twodigits', value: output.awayScore },
-    { id: 't', name: 'Test', value: output.debugEvent }
+    { id: 'a', name: 'Home wins', format: 'Count_Twodigits', value: output.setsHome },
+    { id: 'b', name: 'Away wins', format: 'Count_Twodigits', value: output.setsAway },
+    
   ];
 }
