@@ -4,8 +4,8 @@ var currentTemplate = 'welcome';
 function onLoad(_input, output) {
   output.currentSet = 1;
 
-  output.homeScore = 13;
-  output.awayScore = 13;
+  output.homeScore = 0;
+  output.awayScore = 0;
 
 
   
@@ -79,8 +79,8 @@ var setWon = false;
       case 9: //end sed
       output.matchFinished=0;           
           // Nouveau set
-          output.homeScore = 13;
-          output.awayScore = 13;
+          output.homeScore = 0;
+          output.awayScore = 0;
           output.currentSet++;
           setText("#some_id", "set+1")
 
