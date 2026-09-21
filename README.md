@@ -14,7 +14,7 @@ A SuuntoPlus sports app to track badminton 3x15 scores directly from your Suunto
 ## ⌚ Compatibility
 
 | Watch | Display | Status |
-|-------|---------|-------|--------|
+|-------|---------|--------|
 | Suunto Vertical 2 | q (466×466) | Not tested|
 | Suunto Race S | q (466×466) | Not tested |
 | Suunto Race | q (466×466) | ✅ Recommended |
