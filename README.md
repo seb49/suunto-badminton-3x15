@@ -90,6 +90,9 @@ suunto-badminton-3x15/
 └── t.html          # Main screen
 └── endset.html     # End set screen
 └── endmatch.html   # End match screen
+└── en.json         # English localization file
+└── fr.json         # Frenchh localization file
+└── de.json         # Deutch localization file
 ```
 
 ---

@@ -1,0 +1,26 @@
+{
+    "app":
+        {
+            "title":"Bad 3x15"
+        },
+        "common":
+        {
+            "game":"Jeu",
+            "home":"Domicile",
+            "away":"Extérieur",
+            "1st":"1er",
+            "2nd":"2eme",
+            "3rd":"3eme"
+          },
+    "welcome":
+        {
+            "line1":"Appui court +1",
+            "line2":"Appui long -1",
+            "topbtn":"Btn haut",
+            "bottombtn":"Btn bas",
+            "begin":"Commencer"
+
+        },
+        "endset":{"continue":"Continuer","cancel":"Rejouer dernier point"},
+        "endmatch":{"cancel":"Rejouer dernier point","endmatch":"Fin de partie"}
+}

@@ -1,0 +1,26 @@
+{
+    "app":
+        {
+            "title":"Bad 3x15"
+        },
+        "common":
+        {
+            "game":"Spiel",
+            "home":"Heim",
+            "away":"Weg",
+            "1st":"1st",
+            "2nd":"2nd",
+            "3rd":"3rd"
+          },
+    "welcome":
+        {
+            "line1":"Press button to add point.",
+            "line2":"Long press to remove.",
+
+            "topbtn":"Top btn",
+            "bottombtn":"Bottom btn",
+            "begin":"Begin"
+        },
+        "endset":{"continue":"Continue","cancel":"Cancel last point"},
+        "endmatch":{"cancel":"Cancel last point","endmatch":"End match"}
+}

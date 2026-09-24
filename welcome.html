@@ -1,14 +1,14 @@
 <uiView>    
   <div id="suuntoplus">    
    <div class="sp-title-bg" style="width:100%;height:20%;"></div>
-    <div class="sp-title-text sp-t-m p-hc" style="top:6%;">Bad 3x15</div>
+    <div class="sp-title-text sp-t-m p-hc" style="top:6%;">{{app.title}}</div>
 
     <div class="cm-bg sp-vertical-center p-hc" style="top:22%">
-      <span class="sp-t-m">Press button to add point.</span>            
+      <span class="sp-t-m">{{welcome.line1}}</span>            
     </div>
 
     <div class="cm-bg sp-vertical-center p-hc" style="top:32%">
-      <span class="sp-t-m">Long press to remove.</span>      
+      <span class="sp-t-m">{{welcome.line2}}</span>      
     </div>
 
     <!--Barre verticale de séparation-->
@@ -20,28 +20,28 @@
     background-color:white;
 "></div>
 
-<div style="left:0%; top:45%; width:100%; height:12%">
-    <div class="cm-mid" style="left:17%">
-      <span class="sp-t-m">Top btn</span>            
+<div style="left:0%; top: calc(52% - 52%e); width:100%; height:12%;">    
+    <div class="cm-mid" style="left: calc(25% - 50%e)">
+      <span class="sp-t-m">{{welcome.topbtn}}</span>            
     </div>
-    <div class="cm-mid" style="left:56%">
-      <span class="sp-t-m">Bottom btn</span>            
+    <div class="cm-mid" style="left: calc(75% - 50%e)">
+      <span class="sp-t-m">{{welcome.bottombtn}}</span>            
     </div>        
 </div>
     
-<div style="left:0%; top:55%; width:100%; height:12%;">    
-    <div class="cm-bg" style="left:20%">
-      <span class="sp-t-m">Home</span>            
+<div style="left:0%; top: calc(62% - 62%e); width:100%; height:12%;">    
+    <div class="cm-bg" style="left: calc(25% - 50%e)">
+      <span class="sp-t-m">{{common.home}}</span>            
     </div>
-    <div class="cm-bg" style="left:63%;">
-      <span class="sp-t-m">Away</span>            
+    <div class="cm-bg" style="left: calc(75% - 50%e)">
+      <span class="sp-t-m">{{common.away}}</span>            
     </div>
 </div>
 
 
   <div style="width: 100%; height: 50%; top: calc(100% - 50%e); left: 0%;">
       <img src="btn-shape-btm.png" class="c-yellow" />
-      <div class="f-t-l cm-fgc" style="top: 0%; left: calc(50% - 50%e);">Begin </div>
+      <div class="f-t-l cm-fgc" style="top: 0%; left: calc(50% - 50%e);">{{welcome.begin}}</div>
     </div>
     <div style="width: 50px; height: 50px; top: calc(72.5% - 50%e); left: calc(90% - 50%e);">
       <img class="c-red" src="hint-btn-bottom.png" />

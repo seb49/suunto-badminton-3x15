@@ -1,18 +1,18 @@
 <uiView
 onActivate="$.subscribe('Zapp/{zapp_index}/Output/currentSet', function(v) {
-      setText('#some_id', 'Game ' + v);
+      setText('#num_set',  v);
     });">
   <div>
 
      <div class="sp-title-bg" style="width:100%;height:20%;"></div>
     <div class="sp-title-text sp-t-m p-hc" style="top:6%;">
-      <span id="some_id" class="sp-t-m">Game N</span>
+      <span class="sp-t-m">{{common.game}}</span><span id="num_set" class="sp-t-m"> N</span>
       </div> 
   
   
 
-    <div class="f-t-s cm-mid" style="top:23%;left:5%;width:46%;max-height:34px;text-align:center;">HOME</div>
-    <div class="f-t-s cm-mid" style="top:23%;left:52%;width:46%;max-height:34px;text-align:center;">AWAY</div>
+    <div class="f-t-s cm-mid" style="top:23%;left:5%;width:46%;max-height:34px;text-align:center;">{{common.home}}</div>
+    <div class="f-t-s cm-mid" style="top:23%;left:52%;width:46%;max-height:34px;text-align:center;">{{common.away}}</div>
 
     <div class="f-num sp-d-xxl" style="top:20%;left:2%;width:46%;text-align:center;">
       <eval input="Zapp/{zapp_index}/Output/homeScore"
@@ -35,7 +35,7 @@ onActivate="$.subscribe('Zapp/{zapp_index}/Output/currentSet', function(v) {
     <div class="f-ico-l" style="top:calc(54% - 100%e);left:calc(50% - 50%e)">&#xE034;</div>
     <!-- INDICATEURS descendus a 70% pour eviter superposition avec les scores -->
      
-    <div class="sp-c-orange sp-t-s" style="top:62%;left:5%;width:46%;text-align:center;">1st</div>
+    <div class="sp-c-orange sp-t-s" style="top:62%;left:5%;width:46%;text-align:center;">{{common.1st}}</div>
     <div class="sp-c-orange sp-t-s" style="top:62%;left:18%;width:46%;text-align:center;">
       <eval input="Zapp/{zapp_index}/Output/set1Home" outputFormat="Count_Twodigits" default="-" />
     </div>
@@ -44,7 +44,7 @@ onActivate="$.subscribe('Zapp/{zapp_index}/Output/currentSet', function(v) {
     </div>
 
     <!-- INDICATEURS descendus a 70% pour eviter superposition avec les scores -->
-    <div class="sp-c-orange sp-t-s" style="top:70%;left:5%;width:46%;text-align:center;">2nd</div>
+    <div class="sp-c-orange sp-t-s" style="top:70%;left:5%;width:46%;text-align:center;">{{common.2nd}}</div>
     <div class="sp-c-orange sp-t-s" style="top:70%;left:18%;width:46%;text-align:center;">
       <eval input="Zapp/{zapp_index}/Output/set2Home" outputFormat="Count_Twodigits" default="-" />
     </div>
