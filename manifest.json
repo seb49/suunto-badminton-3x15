@@ -6,7 +6,7 @@
   "type": "feature",
   "usage": "workout",
   "modificationTime": 1748822400,
-  "template": [{ "name": "welcome.html" },{ "name": "t.html" },{ "name": "endset.html" },{ "name": "endmatch.html" }],
+  "template": [{ "name": "welcome.html" },{ "name": "t.html" },{ "name": "changeside.html" },{ "name": "endset.html" },{ "name": "endmatch.html" }],
   "out": [{ "name": "currentSet", "format": "Count_Twodigits", "log": false, "shownName": "Current Set" },
     { "name": "homeScore", "format": "Count_Twodigits", "log": false, "shownName": "Home Score" },
     { "name": "awayScore", "format": "Count_Twodigits", "log": false, "shownName": "Away Score" },

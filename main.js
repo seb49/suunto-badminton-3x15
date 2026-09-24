@@ -45,6 +45,10 @@ var setWon = false;
         output.homeScore++;
          output.lastWinner = 1;
       }
+      if (output.homeScore==8 && output.currentSet==3)
+      {
+        changeView('changeSide'); 
+      }
       break;
 
     // +1 AWAY
@@ -53,6 +57,10 @@ var setWon = false;
         
       if (output.matchFinished == 0) {
         output.awayScore++;
+      }
+      if (output.awayScore==8 && output.currentSet==3)
+      {
+        changeView('changeSide'); 
       }
       break;
 
@@ -122,6 +130,10 @@ var setWon = false;
       
       changeView('t');
       break;
+      case 11:
+        //clic depuis l'écran de notification changement de coté.
+        changeView('t');
+        break;
   }
 
 

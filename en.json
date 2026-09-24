@@ -22,5 +22,6 @@
             "begin":"Begin"
         },
         "endset":{"continue":"Continue","cancel":"Cancel last point"},
-        "endmatch":{"cancel":"Cancel last point","endmatch":"End match"}
+        "endmatch":{"cancel":"Cancel last point","endmatch":"End match"},
+        "changeside":{"textBody":" Change ends"}
 }

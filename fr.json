@@ -22,5 +22,6 @@
 
         },
         "endset":{"continue":"Continuer","cancel":"Rejouer dernier point"},
-        "endmatch":{"cancel":"Rejouer dernier point","endmatch":"Fin de partie"}
+        "endmatch":{"cancel":"Rejouer dernier point","endmatch":"Fin de partie"},
+        "changeside":{"textBody":"Changez de coté"}
 }
