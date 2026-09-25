@@ -1,29 +1,27 @@
-<uiView
-onActivate="$.subscribe('Zapp/{zapp_index}/Output/currentSet', function(v) {
+<uiView onActivate="$.subscribe('Zapp/{zapp_index}/Output/currentSet', function(v) {
       setText('#num_set',  v);
     });">
   <div>
 
-     <div class="sp-title-bg" style="width:100%;height:20%;"></div>
+    <div class="sp-title-bg" style="width:100%;height:20%;"></div>
     <div class="sp-title-text sp-t-m p-hc" style="top:6%;">
       <span class="sp-t-m">{{common.game}}</span><span id="num_set" class="sp-t-m"> N</span>
-      </div> 
-  
-  
+    </div>
+
+
 
     <div class="f-t-s cm-mid" style="top:23%;left:5%;width:46%;max-height:34px;text-align:center;">{{common.home}}</div>
-    <div class="f-t-s cm-mid" style="top:23%;left:52%;width:46%;max-height:34px;text-align:center;">{{common.away}}</div>
+    <div class="f-t-s cm-mid" style="top:23%;left:52%;width:46%;max-height:34px;text-align:center;">{{common.away}}
+    </div>
 
     <div class="f-num sp-d-xxl" style="top:20%;left:2%;width:46%;text-align:center;">
-      <eval input="Zapp/{zapp_index}/Output/homeScore"
-            outputFormat="Count_Twodigits" default="14" />
+      <eval input="Zapp/{zapp_index}/Output/homeScore" outputFormat="Count_Twodigits" default="14" />
     </div>
     <div class="f-num sp-d-xxl" style="top:20%;left:52%;width:46%;text-align:center;">
-      <eval input="Zapp/{zapp_index}/Output/awayScore"
-            outputFormat="Count_Twodigits" default="10" />
+      <eval input="Zapp/{zapp_index}/Output/awayScore" outputFormat="Count_Twodigits" default="10" />
     </div>
 
-     <!--Barre verticale de séparation-->
+    <!--Barre verticale de séparation-->
     <div style="
     left:50%;
     top:65%;
@@ -34,7 +32,7 @@ onActivate="$.subscribe('Zapp/{zapp_index}/Output/currentSet', function(v) {
 
     <div class="f-ico-l" style="top:calc(54% - 100%e);left:calc(50% - 50%e)">&#xE034;</div>
     <!-- INDICATEURS descendus a 70% pour eviter superposition avec les scores -->
-     
+
     <div class="sp-c-orange sp-t-s" style="top:62%;left:5%;width:46%;text-align:center;">{{common.1st}}</div>
     <div class="sp-c-orange sp-t-s" style="top:62%;left:18%;width:46%;text-align:center;">
       <eval input="Zapp/{zapp_index}/Output/set1Home" outputFormat="Count_Twodigits" default="-" />
@@ -51,24 +49,22 @@ onActivate="$.subscribe('Zapp/{zapp_index}/Output/currentSet', function(v) {
     <div class="sp-c-orange sp-t-s" style="top:70%;left:38%;width:46%;text-align:center;">
       <eval input="Zapp/{zapp_index}/Output/set2Away" outputFormat="Count_Twodigits" default="-" />
     </div>
-    
+
 
     <userInput>
-      <pushButton name="up"
-        onClick="$.put('/Zapp/{zapp_index}/Event', 1, null, 'int32');"
+      <pushButton name="up" onClick="$.put('/Zapp/{zapp_index}/Event', 1, null, 'int32');"
         onLongPressStart="$.put('/Zapp/{zapp_index}/Event', 3, null, 'int32');" />
-      <pushButton name="down"
-        onClick="$.put('/Zapp/{zapp_index}/Event', 2, null, 'int32');"
+      <pushButton name="down" onClick="$.put('/Zapp/{zapp_index}/Event', 2, null, 'int32');"
         onLongPressStart="$.put('/Zapp/{zapp_index}/Event', 4, null, 'int32');" />
       <!--<pushButton name="next"
         onLongPressStart="$.put('/Zapp/{zapp_index}/Event', 6, null, 'int32');" />-->
     </userInput>
 
-     
-     <!-- Bottom middle: Workout duration -->
+
+    <!-- Bottom middle: Workout duration -->
     <div class="sp-d-xs f-num p-hc" style="top:calc(85% - 50%e);">
       <eval input="/Activity/Move/-1/Duration/Current" outputFormat="Duration_Training" default="--" />
     </div>
-    
+
   </div>
 </uiView>

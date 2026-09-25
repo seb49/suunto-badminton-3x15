@@ -93,6 +93,7 @@ suunto-badminton-3x15/
 └── en.json         # English localization file
 └── fr.json         # Frenchh localization file
 └── de.json         # Deutch localization file
+└── es.json         # Spanish localization file
 ```
 
 ---

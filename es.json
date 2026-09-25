@@ -1,0 +1,31 @@
+{
+    "app": {
+        "title": "Bad 3x15"
+    },
+    "common": {
+        "game": "Partido",
+        "home": "Local",
+        "away": "Visitante",
+        "1st": "1.º",
+        "2nd": "2.º",
+        "3rd": "3.º"
+    },
+    "welcome": {
+        "line1": "Pulsa el botón para añadir un punto.",
+        "line2": "Mantén pulsado para quitar un punto.",
+        "topbtn": "Botón superior",
+        "bottombtn": "Botón inferior",
+        "begin": "Comenzar"
+    },
+    "endset": {
+        "continue": "Continuar",
+        "cancel": "Cancelar el último punto"
+    },
+    "endmatch": {
+        "cancel": "Cancelar el último punto",
+        "endmatch": "Terminar el partido"
+    },
+    "changeside": {
+        "textBody": " Cambiar de lado"
+    }
+}
