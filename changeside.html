@@ -5,8 +5,19 @@
       <pushButton name="up" type="lock" onClick="$.put('/Zapp/{zapp_index}/Event', 11, null, 'int32');" />
       <pushButton name="down" type="lock" onClick="$.put('/Zapp/{zapp_index}/Event', 11, null, 'int32');" />
     </userInput>
+  <div style="width: 50px; height: 50px; top: calc(35% - 50%e); left: calc(90% - 50%e);">
+      <img class="c-white" src="hint-btn-top.png" />
+    </div>
 
-    <:dialog icon="icon-m-connected.png" iconColor="c-yellow" textBody="{{changeside.textBody}}" btnTopText="Continue"
-      btnTopShapeClass="c-yellow" btnBtmText="Contin ue" />
+    
+       <div class="f-ico-l" style="top:calc(35% - 100%e);left:calc(50% - 50%e)">&#xE034;</div>
+    <!-- INDICATEURS descendus a 70% pour eviter superposition avec les scores -->
+
+    <div class="" style="top:calc(50% - 50%e);left:calc(50% - 50%e);width:calc(50% - 50%e);text-align:center;">
+       <span class="sp-t-l">{{changeside.textBody}}</span>
+    </div>
+    <div style="width: 50px; height: 50px; top: calc(72.5% - 50%e); left: calc(90% - 50%e);">
+      <img class="c-white" src="hint-btn-bottom.png" />
+    </div>
   </div>
 </uiView>

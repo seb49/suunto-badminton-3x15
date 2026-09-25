@@ -45,8 +45,8 @@ function onEvent(_input, output, eventId) {
         output.homeScore++;
         output.lastWinner = 1;
       }
-      if (output.homeScore == 8 && output.currentSet == 3) {
-        changeView('changeSide');
+      if ((output.homeScore == 8 && output.awayScore < 8) && output.currentSet == 3) {
+        changeView('changeside');
       }
       break;
 
@@ -57,8 +57,8 @@ function onEvent(_input, output, eventId) {
       if (output.matchFinished == 0) {
         output.awayScore++;
       }
-      if (output.awayScore == 8 && output.currentSet == 3) {
-        changeView('changeSide');
+      if ((output.awayScore == 8 && output.homeScore < 8) && output.currentSet == 3) {
+        changeView('changeside');
       }
       break;
 
@@ -88,8 +88,7 @@ function onEvent(_input, output, eventId) {
       output.homeScore = 0;
       output.awayScore = 0;
       output.currentSet++;
-      setText("#some_id", "set+1")
-
+      
       changeView('t');
       break;
     case 10: //cancel last set
