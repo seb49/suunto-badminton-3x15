@@ -11,6 +11,9 @@ A SuuntoPlus sports app to track badminton 3x15 scores directly from your Suunto
 
 ---
 
+## 📋 Screenshots
+ <img src="screenshots/welcome_screen.jpeg" alt="Welcome Screen" />
+
 ## ⌚ Compatibility
 
 | Watch | Display | Status |
